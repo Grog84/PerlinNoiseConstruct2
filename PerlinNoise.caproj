@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>PerlinNoise</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>1tnqshzfmdl54</unique-id>
+    <saved-with-version>24400</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="XML" version="1">XML</plugin>
+    </used-plugins>
+    <used-behaviors />
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>800</width>
+        <height>800</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">Chrome</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="Cell" sid="450765937398470">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Val" sid="715313184159825" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="636790329396094" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="0" x="0" y="0" />
+                        <image-point name="1" x="1" y="0" />
+                        <image-point name="2" x="1" y="1" />
+                        <image-point name="3" x="0" y="1" />
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Edge" sid="834942499549523">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="GradientX" name="gx" sid="440949464154618" type="number" />
+                <instance-variable comment="GradientY" name="gy" sid="339501086583783" type="number" />
+                <instance-variable comment="GradientZ" name="gz" sid="491471673211714" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="182874423173570" speed="5">
+                    <frame duration="1" hotspotX="0.6" hotspotY="0.6" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="AJAX" sid="997749907861824">
+            <plugin id="AJAX" />
+        </object-type>
+        <object-type global="1" name="XML" sid="913812764557172">
+            <plugin id="XML" />
+        </object-type>
+        <object-type global="1" name="PerlinVect" sid="341095998309860">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="Text" sid="212993858862323">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Function" sid="365805703790682">
+            <plugin id="Function" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Layout 1.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="AJAX" uid="2" />
+        <global-instance type="Function" uid="6" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+        <file name="PerlinVect.xml" />
+    </files-folder>
+</c2project>
