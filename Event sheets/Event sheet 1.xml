@@ -242,15 +242,15 @@
                             <actions>
                                 <action id="-9" name="Set value" sid="944938375337619" type="System">
                                     <param id="0" name="Variable">tmp_lerp1</param>
-                                    <param id="1" name="Value">lerp(Q1, Q2, 100*(Cell.X%(Cell.Width*DotsFreq))/(Cell.Width*DotsFreq))</param>
+                                    <param id="1" name="Value">lerp(Q1, Q2, (Cell.X%(Cell.Width*DotsFreq))/(Cell.Width*DotsFreq))</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="911994777447019" type="System">
                                     <param id="0" name="Variable">tmp_lerp2</param>
-                                    <param id="1" name="Value">lerp(Q3, Q4, 100*(Cell.X%(Cell.Width*DotsFreq))/(Cell.Width*DotsFreq))</param>
+                                    <param id="1" name="Value">lerp(Q3, Q4, (Cell.X%(Cell.Width*DotsFreq))/(Cell.Width*DotsFreq))</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="696913810764791" type="Cell">
                                     <param id="0" name="Instance variable">Val</param>
-                                    <param id="1" name="Value">lerp(tmp_lerp1, tmp_lerp2, (Cell.Y%(Cell.Height*DotsFreq))*100/(Cell.Height*DotsFreq))</param>
+                                    <param id="1" name="Value">lerp(tmp_lerp1, tmp_lerp2, (Cell.Y%(Cell.Height*DotsFreq))/(Cell.Height*DotsFreq))</param>
                                 </action>
                                 <action id="-10" name="Add to" sid="297469269219245" type="System">
                                     <param id="0" name="Variable">CellCounter</param>
