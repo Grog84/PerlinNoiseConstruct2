@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <variable comment="Size of the lattice in number of squares" constant="0" name="DotsFreq" sid="548522113881054" static="0" type="number">5</variable>
         <variable constant="0" name="StartNoiseCalc" sid="857495039681272" static="0" type="number">0</variable>
         <variable constant="0" name="StartGradientCreation" sid="455222572749869" static="0" type="number">0</variable>
         <event-block sid="500639681772661">
@@ -45,7 +46,7 @@
                         <condition id="-10" name="For" sid="588896057126047" type="System">
                             <param id="0" name="Name">&quot;IDX_W&quot;</param>
                             <param id="1" name="Start index">0</param>
-                            <param id="2" name="End index">int(LayoutWidth/Cell.Width)</param>
+                            <param id="2" name="End index">int(LayoutWidth/(Cell.Width*DotsFreq))</param>
                         </condition>
                     </conditions>
                     <actions />
@@ -55,258 +56,17 @@
                                 <condition id="-10" name="For" sid="100500552840844" type="System">
                                     <param id="0" name="Name">&quot;IDX_H&quot;</param>
                                     <param id="1" name="Start index">0</param>
-                                    <param id="2" name="End index">int(LayoutHeight/Cell.Height)</param>
+                                    <param id="2" name="End index">int(LayoutWidth/(Cell.Width*DotsFreq))</param>
                                 </condition>
                             </conditions>
                             <actions>
                                 <action id="-3" name="Create object" sid="102214640804858" type="System">
                                     <param id="0" name="Object to create">Edge</param>
                                     <param id="1" name="Layer">0</param>
-                                    <param id="2" name="X">loopindex(&quot;IDX_W&quot;)*Cell.Width</param>
-                                    <param id="3" name="Y">loopindex(&quot;IDX_H&quot;)*Cell.Height</param>
+                                    <param id="2" name="X">loopindex(&quot;IDX_W&quot;)*Cell.Width*DotsFreq</param>
+                                    <param id="3" name="Y">loopindex(&quot;IDX_H&quot;)*Cell.Height*DotsFreq</param>
                                 </action>
                             </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="768467917450573">
-                    <conditions />
-                    <actions>
-                        <action id="1" name="Request project file" sid="766444736318979" type="AJAX">
-                            <param id="0" name="Tag">&quot;vectors&quot;</param>
-                            <param id="1" name="File">PerlinVect.xml</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="940074811042567">
-            <conditions>
-                <condition id="0" name="On completed" sid="985892774000392" type="AJAX">
-                    <param id="0" name="Tag">&quot;vectors&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Load" sid="566001124586212" type="XML">
-                    <param id="0" name="XML">AJAX.LastData</param>
-                </action>
-            </actions>
-            <sub-events>
-                <event-block sid="600840893729339">
-                    <conditions>
-                        <condition id="0" name="For each node" sid="700802426339959" type="XML">
-                            <param id="0" name="XPath">&quot;/PerlinVect&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <variable constant="0" name="i" sid="765276603330519" static="0" type="number">0</variable>
-                        <event-block sid="243124267498937">
-                            <conditions>
-                                <condition id="0" name="For each node" sid="387163218467224" type="XML">
-                                    <param id="0" name="XPath">&quot;vec&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="3" name="Set at XY" sid="909258523201964" type="PerlinVect">
-                                    <param id="0" name="X">i</param>
-                                    <param id="1" name="Y">0</param>
-                                    <param id="2" name="Value">XML.NumberValue(&quot;@x&quot;)</param>
-                                </action>
-                                <action id="3" name="Set at XY" sid="532917882799281" type="PerlinVect">
-                                    <param id="0" name="X">i</param>
-                                    <param id="1" name="Y">1</param>
-                                    <param id="2" name="Value">XML.NumberValue(&quot;@y&quot;)</param>
-                                </action>
-                                <action id="3" name="Set at XY" sid="444161964851672" type="PerlinVect">
-                                    <param id="0" name="X">i</param>
-                                    <param id="1" name="Y">2</param>
-                                    <param id="2" name="Value">XML.NumberValue(&quot;@z&quot;)</param>
-                                </action>
-                                <action id="-10" name="Add to" sid="657034529424538" type="System">
-                                    <param id="0" name="Variable">i</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
-                            <sub-events>
-                                <event-block sid="485070224536634">
-                                    <conditions>
-                                        <condition id="-14" name="Compare variable" sid="770512237444655" type="System">
-                                            <param id="0" name="Variable">i</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">12</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="531136583641155" type="System">
-                                            <param id="0" name="Variable">StartGradientCreation</param>
-                                            <param id="1" name="Value">1</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="246661447363231">
-            <conditions>
-                <condition id="-14" name="Compare variable" sid="557935534695642" type="System">
-                    <param id="0" name="Variable">StartGradientCreation</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">1</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <variable constant="0" name="rnd_idx" sid="676022976017006" static="0" type="number">0</variable>
-                <variable constant="0" name="i" sid="214361798513280" static="0" type="number">0</variable>
-                <event-block sid="906841726788369">
-                    <conditions>
-                        <condition id="-11" name="For Each" sid="267614178087382" type="System">
-                            <param id="0" name="Object">Edge</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="409459223963475" type="System">
-                            <param id="0" name="Variable">rnd_idx</param>
-                            <param id="1" name="Value">int(random(12))</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="656140206204811" type="Edge">
-                            <param id="0" name="Instance variable">gx</param>
-                            <param id="1" name="Value">PerlinVect.At(rnd_idx, 0)</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="202191860864218" type="Edge">
-                            <param id="0" name="Instance variable">gy</param>
-                            <param id="1" name="Value">PerlinVect.At(rnd_idx, 1)</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="665437070434523" type="Edge">
-                            <param id="0" name="Instance variable">gx</param>
-                            <param id="1" name="Value">PerlinVect.At(rnd_idx, 2)</param>
-                        </action>
-                        <action id="-10" name="Add to" sid="315820100297816" type="System">
-                            <param id="0" name="Variable">i</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                    </actions>
-                    <sub-events>
-                        <event-block sid="781340738479785">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="359107360813323" type="System">
-                                    <param id="0" name="Variable">i</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">Edge.Count</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="347670384063353" type="System">
-                                    <param id="0" name="Variable">StartNoiseCalc</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="986013362996056">
-            <conditions>
-                <condition id="-14" name="Compare variable" sid="859224193614998" type="System">
-                    <param id="0" name="Variable">StartNoiseCalc</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">1</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="397640398180971">
-                    <conditions>
-                        <condition id="-11" name="For Each" sid="826207875002219" type="System">
-                            <param id="0" name="Object">Cell</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <variable constant="0" name="influence1" sid="836372354931756" static="0" type="number">0</variable>
-                        <variable constant="0" name="influence2" sid="684246296451368" static="0" type="number">0</variable>
-                        <variable constant="0" name="influence3" sid="927173135791246" static="0" type="number">0</variable>
-                        <variable constant="0" name="influence4" sid="188422354220071" static="0" type="number">0</variable>
-                        <event-block sid="859531432005557">
-                            <conditions>
-                                <condition id="-1" name="Compare X" sid="639728757167847" type="Edge">
-                                    <param id="0" name="Comparison">0</param>
-                                    <param id="1" name="X co-ordinate">Cell.ImagePointX(1)</param>
-                                </condition>
-                                <condition id="-2" name="Compare Y" sid="203531946413560" type="Edge">
-                                    <param id="0" name="Comparison">0</param>
-                                    <param id="1" name="Y co-ordinate">Cell.ImagePointY(1)</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="123193507289215" type="System">
-                                    <param id="0" name="Variable">influence1</param>
-                                    <param id="1" name="Value">Edge.gx - Edge.gy</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="510387794653600">
-                            <conditions>
-                                <condition id="-1" name="Compare X" sid="900353946787594" type="Edge">
-                                    <param id="0" name="Comparison">0</param>
-                                    <param id="1" name="X co-ordinate">Cell.ImagePointX(2)</param>
-                                </condition>
-                                <condition id="-2" name="Compare Y" sid="286498694129870" type="Edge">
-                                    <param id="0" name="Comparison">0</param>
-                                    <param id="1" name="Y co-ordinate">Cell.ImagePointY(2)</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="624301713556754" type="System">
-                                    <param id="0" name="Variable">influence2</param>
-                                    <param id="1" name="Value">-Edge.gx + Edge.gy</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="816382983048680">
-                            <conditions>
-                                <condition id="-1" name="Compare X" sid="728510049302568" type="Edge">
-                                    <param id="0" name="Comparison">0</param>
-                                    <param id="1" name="X co-ordinate">Cell.ImagePointX(3)</param>
-                                </condition>
-                                <condition id="-2" name="Compare Y" sid="471499416467054" type="Edge">
-                                    <param id="0" name="Comparison">0</param>
-                                    <param id="1" name="Y co-ordinate">Cell.ImagePointY(3)</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="166289948269508" type="System">
-                                    <param id="0" name="Variable">influence3</param>
-                                    <param id="1" name="Value">-Edge.gx - Edge.gy</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="961059914968024">
-                            <conditions>
-                                <condition id="-1" name="Compare X" sid="768681213607759" type="Edge">
-                                    <param id="0" name="Comparison">0</param>
-                                    <param id="1" name="X co-ordinate">Cell.ImagePointX(4)</param>
-                                </condition>
-                                <condition id="-2" name="Compare Y" sid="265483093502951" type="Edge">
-                                    <param id="0" name="Comparison">0</param>
-                                    <param id="1" name="Y co-ordinate">Cell.ImagePointY(4)</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="129725917060979" type="System">
-                                    <param id="0" name="Variable">influence4</param>
-                                    <param id="1" name="Value">Edge.gx - Edge.gy</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="879176719418240">
-                            <conditions />
-                            <actions />
                         </event-block>
                     </sub-events>
                 </event-block>
