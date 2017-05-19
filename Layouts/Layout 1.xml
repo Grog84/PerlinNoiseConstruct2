@@ -4,8 +4,8 @@
     <sid>946990531680329</sid>
     <event-sheet>Event sheet 1</event-sheet>
     <size>
-        <width>800</width>
-        <height>800</height>
+        <width>1200</width>
+        <height>1200</height>
     </size>
     <margins>
         <horizontal>500</horizontal>
@@ -39,11 +39,14 @@
                     <instance-variables>
                         <Val>0</Val>
                     </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="DestroyOutsideLayout" />
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-337</x>
-                        <y>249</y>
+                        <x>-267</x>
+                        <y>122</y>
                         <z>0</z>
                         <width>20</width>
                         <height>20</height>
@@ -64,7 +67,6 @@
                     <instance-variables>
                         <gx>0</gx>
                         <gy>0</gy>
-                        <gz>0</gz>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -104,6 +106,33 @@
                     <properties>
                         <text>Text</text>
                         <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-37,700,0</font>
+                        <color>0,0,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-482</x>
+                        <y>371</y>
+                        <z>0</z>
+                        <width>350</width>
+                        <height>657</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Text2" uid="7">
+                    <properties>
+                        <text>Text</text>
+                        <initial-visibility>Visible</initial-visibility>
                         <font>Arial,-64,700,0</font>
                         <color>255,255,255</color>
                         <horizontal-alignment>Left</horizontal-alignment>
@@ -115,11 +144,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-727</x>
-                        <y>405</y>
+                        <x>504</x>
+                        <y>-267</y>
                         <z>0</z>
-                        <width>663</width>
-                        <height>264</height>
+                        <width>313</width>
+                        <height>135</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>

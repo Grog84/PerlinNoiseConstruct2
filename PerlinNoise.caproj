@@ -13,18 +13,21 @@
         <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="XML" version="1">XML</plugin>
     </used-plugins>
-    <used-behaviors />
+    <used-behaviors>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+    </used-behaviors>
     <used-effects />
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>800</width>
-        <height>800</height>
+        <width>1200</width>
+        <height>1200</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
@@ -50,8 +53,19 @@
             <instance-variables>
                 <instance-variable name="Val" sid="715313184159825" type="number" />
             </instance-variables>
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="966755158947851">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="636790329396094" speed="5">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="636790329396094" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="0" x="0" y="0" />
+                        <image-point name="1" x="1" y="0" />
+                        <image-point name="2" x="1" y="1" />
+                        <image-point name="3" x="0" y="1" />
+                    </frame>
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <image-point name="0" x="0" y="0" />
                         <image-point name="1" x="1" y="0" />
@@ -66,7 +80,6 @@
             <instance-variables>
                 <instance-variable comment="GradientX" name="gx" sid="440949464154618" type="number" />
                 <instance-variable comment="GradientY" name="gy" sid="339501086583783" type="number" />
-                <instance-variable comment="GradientZ" name="gz" sid="491471673211714" type="number" />
             </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="182874423173570" speed="5">
@@ -89,6 +102,12 @@
         <object-type name="Function" sid="365805703790682">
             <plugin id="Function" />
         </object-type>
+        <object-type name="Text2" sid="314396088707123">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Keyboard" sid="203389429240432">
+            <plugin id="Keyboard" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -100,6 +119,7 @@
     <global-instances>
         <global-instance type="AJAX" uid="2" />
         <global-instance type="Function" uid="6" />
+        <global-instance type="Keyboard" uid="8" />
     </global-instances>
     <sounds-folder />
     <music-folder />
