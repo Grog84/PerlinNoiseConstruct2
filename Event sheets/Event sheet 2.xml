@@ -1,0 +1,499 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 2</name>
+    <events>
+        <event-block sid="294188530551748">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="684499550046077" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="886796368350522">
+                    <conditions>
+                        <condition id="-10" name="For" sid="203265123106157" type="System">
+                            <param id="0" name="Name">&quot;IDX_W&quot;</param>
+                            <param id="1" name="Start index">0</param>
+                            <param id="2" name="End index">int(LayoutWidth/Cell.Width) -1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="369253261836332">
+                            <conditions>
+                                <condition id="-10" name="For" sid="824652665408804" type="System">
+                                    <param id="0" name="Name">&quot;IDX_H&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">int(LayoutHeight/Cell.Height) -1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="692513056243926" type="System">
+                                    <param id="0" name="Object to create">Cell</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">loopindex(&quot;IDX_W&quot;)*Cell.Width + Cell.Width/2.0</param>
+                                    <param id="3" name="Y">loopindex(&quot;IDX_H&quot;)*Cell.Height + Cell.Height/2.0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="213000150200744">
+                    <conditions />
+                    <actions>
+                        <action id="2" name="Set at X" sid="290334979045270" type="DotsFreq">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Value">4</param>
+                        </action>
+                        <action id="2" name="Set at X" sid="800915278373421" type="DotsFreq">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Value">7</param>
+                        </action>
+                        <action id="2" name="Set at X" sid="714907491256456" type="DotsFreq">
+                            <param id="0" name="X">2</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <variable constant="0" name="FreqIdx" sid="851548483996620" static="0" type="number">0</variable>
+                <event-block sid="839372739549707">
+                    <conditions>
+                        <condition id="3" name="For each element" sid="482049081655003" type="DotsFreq">
+                            <param id="0" name="Axes">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="698342211858204">
+                            <conditions>
+                                <condition id="-10" name="For" sid="739867223791714" type="System">
+                                    <param id="0" name="Name">&quot;IDX_W&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">int(LayoutWidth/(Cell.Width*DotsFreq.CurValue))</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="790420488444958">
+                                    <conditions>
+                                        <condition id="-10" name="For" sid="419458014787257" type="System">
+                                            <param id="0" name="Name">&quot;IDX_H&quot;</param>
+                                            <param id="1" name="Start index">0</param>
+                                            <param id="2" name="End index">int(LayoutWidth/(Cell.Width*DotsFreq.CurValue))</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="521516604590891" type="System">
+                                            <param id="0" name="Object to create">Edge</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">loopindex(&quot;IDX_W&quot;)*Cell.Width*DotsFreq.CurValue</param>
+                                            <param id="3" name="Y">loopindex(&quot;IDX_H&quot;)*Cell.Height*DotsFreq.CurValue</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="797937276577074" type="Edge">
+                                            <param id="0" name="Instance variable">id</param>
+                                            <param id="1" name="Value">DotsFreq.CurValue</param>
+                                        </action>
+                                        <action id="2" name="Set at X" sid="422190396099523" type="DotsCount">
+                                            <param id="0" name="X">FreqIdx</param>
+                                            <param id="1" name="Value">DotsCount.At(FreqIdx) + 1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="489181601414679">
+                            <conditions />
+                            <actions>
+                                <action id="-10" name="Add to" sid="231848718201640" type="System">
+                                    <param id="0" name="Variable">FreqIdx</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="736513098968696">
+                    <conditions />
+                    <actions>
+                        <action id="-9" name="Set value" sid="979649785665993" type="System">
+                            <param id="0" name="Variable">StartGradient</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="823163590430380">
+            <conditions>
+                <condition id="0" name="On function" sid="943125589344637" type="Function">
+                    <param id="0" name="Name">&quot;CalcGradient&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="596097236823206">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="832467720170569" type="System">
+                            <param id="0" name="Object">Edge</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="152699283270873" type="Edge">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Function.Param(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="322736390481909" type="Edge">
+                            <param id="0" name="Instance variable">gx</param>
+                            <param id="1" name="Value">(int(random(0, 201)) - 100)/100</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="849893604294043" type="Edge">
+                            <param id="0" name="Instance variable">gy</param>
+                            <param id="1" name="Value">(int(random(0, 201)) - 100)/100</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="902148208825474" type="System">
+                            <param id="0" name="Variable">GradientCounter</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <variable constant="0" name="gradIDX" sid="766453675833641" static="0" type="number">0</variable>
+        <event-block sid="373774834673519">
+            <conditions>
+                <condition id="3" name="For each element" sid="107403287814901" type="DotsFreq">
+                    <param id="0" name="Axes">2</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="305843841430104" type="System">
+                    <param id="0" name="Variable">StartGradient</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="649606541491241" type="Function">
+                    <param id="0" name="Name">&quot;CalcGradient&quot;</param>
+                    <param id="1" name="Parameter {n}">DotsFreq.CurValue{###}gradIDX</param>
+                </action>
+                <action id="-10" name="Add to" sid="312187542507402" type="System">
+                    <param id="0" name="Variable">gradIDX</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="645989508656527">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="645803455300579" type="System">
+                            <param id="0" name="Variable">GradientCounter</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">Edge.Count</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="331059202016539" type="System">
+                            <param id="0" name="Variable">StartGradient</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="646549014381508" type="System">
+                            <param id="0" name="Variable">gradIDX</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="890902674047369" type="System">
+                            <param id="0" name="Variable">GradientCounter</param>
+                            <param id="1" name="Value">Edge.Count</param>
+                        </action>
+                        <action id="-24" name="Stop loop" sid="859844355815386" type="System" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="892266336154165">
+            <conditions>
+                <condition id="0" name="On function" sid="461448457456922" type="Function">
+                    <param id="0" name="Name">&quot;CalcValue&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="510064415928199">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="168613355978333" type="System">
+                            <param id="0" name="Object">Cell</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="452884283959924" type="System">
+                            <param id="0" name="Variable">GradientCounter</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Edge.Count</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="403315589430144" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="LatticeX" sid="716754536999796" static="0" type="number">0</variable>
+                        <variable constant="0" name="LatticeY" sid="329041783367175" static="0" type="number">0</variable>
+                        <event-block sid="316117700163555">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="761789302763204" type="System">
+                                    <param id="0" name="Variable">LatticeX</param>
+                                    <param id="1" name="Value">int(Cell.X / (Cell.Width*Function.Param(0)))</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="409993455743133" type="System">
+                                    <param id="0" name="Variable">LatticeY</param>
+                                    <param id="1" name="Value">int(Cell.Y / (Cell.Height*Function.Param(0)))</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <variable constant="0" name="Q1" sid="620174851548779" static="0" type="number">0</variable>
+                                <variable constant="0" name="Q2" sid="450600613460584" static="0" type="number">0</variable>
+                                <variable constant="0" name="Q3" sid="814247903949190" static="0" type="number">0</variable>
+                                <variable constant="0" name="Q4" sid="181670033942340" static="0" type="number">0</variable>
+                                <event-block sid="504094151964856">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="615495547473510" type="Edge">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="X co-ordinate">LatticeX * Cell.Width * DotsFreqMono</param>
+                                        </condition>
+                                        <condition id="-2" name="Compare Y" sid="776915054221032" type="Edge">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Y co-ordinate">LatticeY * Cell.Height * DotsFreqMono</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="432262307574096" type="System">
+                                            <param id="0" name="Variable">Q1</param>
+                                            <param id="1" name="Value">(Cell.X - Edge.X) * Edge.gx + (Cell.Y - Edge.Y) * Edge.gy</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="344945919830993">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="104897164283969" type="Edge">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="X co-ordinate">(LatticeX+1) * Cell.Width * DotsFreqMono</param>
+                                        </condition>
+                                        <condition id="-2" name="Compare Y" sid="719149895627907" type="Edge">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Y co-ordinate">LatticeY * Cell.Height * DotsFreqMono</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="570498451182370" type="System">
+                                            <param id="0" name="Variable">Q2</param>
+                                            <param id="1" name="Value">(Cell.X - Edge.X) * Edge.gx + (Cell.Y - Edge.Y) * Edge.gy</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="955629299429998">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="319550254270360" type="Edge">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="X co-ordinate">LatticeX * Cell.Width * DotsFreqMono</param>
+                                        </condition>
+                                        <condition id="-2" name="Compare Y" sid="781106162950806" type="Edge">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Y co-ordinate">(LatticeY+1) * Cell.Height * DotsFreqMono</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="183788689850949" type="System">
+                                            <param id="0" name="Variable">Q3</param>
+                                            <param id="1" name="Value">(Cell.X - Edge.X) * Edge.gx + (Cell.Y - Edge.Y) * Edge.gy</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="307485140798106">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="876136882292379" type="Edge">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="X co-ordinate">(LatticeX+1) * Cell.Width * DotsFreqMono</param>
+                                        </condition>
+                                        <condition id="-2" name="Compare Y" sid="910638543618592" type="Edge">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Y co-ordinate">(LatticeY+1) * Cell.Height * DotsFreqMono</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="892424601796610" type="System">
+                                            <param id="0" name="Variable">Q4</param>
+                                            <param id="1" name="Value">(Cell.X - Edge.X) * Edge.gx + (Cell.Y - Edge.Y) * Edge.gy</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <variable constant="0" name="tmp_lerp1" sid="188855380716095" static="0" type="number">0</variable>
+                                <variable constant="0" name="tmp_lerp2" sid="818947307855628" static="0" type="number">0</variable>
+                                <event-block sid="226772899672603">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="997064217787610" type="System">
+                                            <param id="0" name="Variable">tmp_lerp1</param>
+                                            <param id="1" name="Value">lerp(Q1, Q2, (Cell.X%(Cell.Width*Function.Param(0)))/(Cell.Width*Function.Param(0)))</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="664269057894816" type="System">
+                                            <param id="0" name="Variable">tmp_lerp2</param>
+                                            <param id="1" name="Value">lerp(Q3, Q4, (Cell.X%(Cell.Width*Function.Param(0)))/(Cell.Width*Function.Param(0)))</param>
+                                        </action>
+                                        <action id="-11" name="Add to" sid="953767424638622" type="Cell">
+                                            <param id="0" name="Instance variable">Val</param>
+                                            <param id="1" name="Value">lerp(tmp_lerp1, tmp_lerp2, (Cell.Y%(Cell.Height*Function.Param(0)))/(Cell.Height*Function.Param(0)))</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="660112728721784" type="System">
+                                            <param id="0" name="Variable">CellCounter</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="289842013838722">
+            <conditions>
+                <condition id="3" name="For each element" sid="790849358980168" type="DotsFreq">
+                    <param id="0" name="Axes">2</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="682477450487369" type="System">
+                    <param id="0" name="Variable">GradientCounter</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">Edge.Count</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="776945696832637" type="Function">
+                    <param id="0" name="Name">&quot;CalcValue&quot;</param>
+                    <param id="1" name="Parameter {n}">DotsFreq.CurValue{###}gradIDX</param>
+                </action>
+                <action id="-10" name="Add to" sid="857646254387460" type="System">
+                    <param id="0" name="Variable">gradIDX</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="300401698789224">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="236166711302333" type="System">
+                            <param id="0" name="Variable">CellCounter</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">3*Cell.Count</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="845629512279709" type="System">
+                            <param id="0" name="Variable">CellCounter</param>
+                            <param id="1" name="Value">3*Cell.Count</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="193419022275965" type="System">
+                            <param id="0" name="Variable">GradientCounter</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-24" name="Stop loop" sid="561737697629978" type="System" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="933009457010629">
+            <conditions>
+                <condition id="-11" name="For Each" sid="417596868858909" type="System">
+                    <param id="0" name="Object">Cell</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="194509500134048" type="System">
+                    <param id="0" name="Variable">CellCounter</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3*(Cell.Count)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="808900089605807" type="System">
+                    <param id="0" name="Variable">MaxVal</param>
+                    <param id="1" name="Value">max(abs(Cell.Val), MaxVal)</param>
+                </action>
+                <action id="-10" name="Add to" sid="271959468537046" type="System">
+                    <param id="0" name="Variable">CellCounter2</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="156375300831641">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="553999809061982" type="System">
+                            <param id="0" name="Variable">CellCounter</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Cell.Count</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="968801257920458" type="System">
+                            <param id="0" name="Variable">CellCounter</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-24" name="Stop loop" sid="332648843908137" type="System" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="751324235067554">
+            <conditions>
+                <condition id="-11" name="For Each" sid="195441150548786" type="System">
+                    <param id="0" name="Object">Cell</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="984151195273830" type="System">
+                    <param id="0" name="Variable">CellCounter2</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">Cell.Count</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="869227258366140" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="565162895895499" type="Cell">
+                    <param id="0" name="Instance variable">Val</param>
+                    <param id="1" name="Value">(Self.Val/MaxVal * 100)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="362153895568033">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="676894834217634" type="Cell">
+                            <param id="0" name="Instance variable">Val</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="478722013540369" type="Cell">
+                            <param id="0" name="Opacity">self.Val</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="406183107360302">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="109207340037824" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="927817359894030" type="Cell">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="198767231062518" type="Cell">
+                            <param id="0" name="Opacity">abs(self.Val)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="394794874940505">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="387659191038441" type="Keyboard">
+                    <param id="0" name="Key">32 (Barra Spaziatrice)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-21" name="Reset global variables" sid="920342933585120" type="System" />
+                <action id="-2" name="Go to layout" sid="802816136974247" type="System">
+                    <param id="0" name="Layout">Layout 2</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

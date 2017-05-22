@@ -67,6 +67,7 @@
                     <instance-variables>
                         <gx>0</gx>
                         <gy>0</gy>
+                        <id>0</id>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
