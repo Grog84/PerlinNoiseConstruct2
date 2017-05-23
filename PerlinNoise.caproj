@@ -48,7 +48,7 @@
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder>
-        <object-type name="Cell" sid="450765937398470">
+        <object-type global="1" name="Cell" sid="450765937398470">
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable name="Val" sid="715313184159825" type="number" />
@@ -120,10 +120,12 @@
     <layout-folder>
         <layout>Layout 1.xml</layout>
         <layout>Layout 2.xml</layout>
+        <layout>Layout 3.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
         <event-sheet>Event sheet 2.xml</event-sheet>
+        <event-sheet>Event sheet 3.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="AJAX" uid="2" />

@@ -47,7 +47,7 @@
                         </action>
                         <action id="2" name="Set at X" sid="800915278373421" type="DotsFreq">
                             <param id="0" name="X">1</param>
-                            <param id="1" name="Value">7</param>
+                            <param id="1" name="Value">6</param>
                         </action>
                         <action id="2" name="Set at X" sid="714907491256456" type="DotsFreq">
                             <param id="0" name="X">2</param>
@@ -96,6 +96,12 @@
                                         <action id="2" name="Set at X" sid="422190396099523" type="DotsCount">
                                             <param id="0" name="X">FreqIdx</param>
                                             <param id="1" name="Value">DotsCount.At(FreqIdx) + 1</param>
+                                        </action>
+                                        <action id="-5" name="Set width" sid="288868804836819" type="Edge">
+                                            <param id="0" name="Width">Self.id</param>
+                                        </action>
+                                        <action id="-6" name="Set height" sid="877472120573569" type="Edge">
+                                            <param id="0" name="Height">Self.id</param>
                                         </action>
                                     </actions>
                                 </event-block>

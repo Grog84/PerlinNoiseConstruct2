@@ -8,7 +8,7 @@
         <variable constant="0" name="GradientCounter" sid="765311504682421" static="0" type="number">0</variable>
         <variable constant="0" name="CellCounter" sid="318150518757050" static="0" type="number">0</variable>
         <variable constant="0" name="CellCounter2" sid="458450033432879" static="0" type="number">0</variable>
-        <variable comment="Size of the lattice in number of squares" constant="0" name="DotsFreqMono" sid="548522113881054" static="0" type="number">5</variable>
+        <variable comment="Size of the lattice in number of squares" constant="0" name="DotsFreqMono" sid="548522113881054" static="0" type="number">10</variable>
         <variable constant="0" name="StartNoiseCalc" sid="857495039681272" static="0" type="number">0</variable>
         <variable constant="0" name="StartGradientCreation" sid="455222572749869" static="0" type="number">0</variable>
         <event-block sid="500639681772661">
