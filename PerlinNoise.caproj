@@ -15,7 +15,7 @@
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
-        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
         <plugin author="Scirra" id="XML" version="1">XML</plugin>
     </used-plugins>
     <used-behaviors>
@@ -97,14 +97,8 @@
         <object-type global="1" name="PerlinVect" sid="341095998309860">
             <plugin id="Arr" />
         </object-type>
-        <object-type name="Text" sid="212993858862323">
-            <plugin id="Text" />
-        </object-type>
         <object-type name="Function" sid="365805703790682">
             <plugin id="Function" />
-        </object-type>
-        <object-type name="Text2" sid="314396088707123">
-            <plugin id="Text" />
         </object-type>
         <object-type name="Keyboard" sid="203389429240432">
             <plugin id="Keyboard" />
@@ -114,6 +108,9 @@
         </object-type>
         <object-type global="1" name="DotsCount" sid="449064205546380">
             <plugin id="Arr" />
+        </object-type>
+        <object-type name="TextBox" sid="773555825321440">
+            <plugin id="TextBox" />
         </object-type>
     </object-folder>
     <families />

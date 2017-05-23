@@ -2,5 +2,137 @@
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 3</name>
-    <events />
+    <events>
+        <event-block sid="192062585838843">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="153176000539710" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="808598886636381">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="228598797931209" type="Cell">
+                            <param id="0" name="Object">Cell</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="valnew" sid="592840410896009" static="0" type="number">0</variable>
+                        <event-block sid="658533262200390">
+                            <conditions>
+                                <condition id="-13" name="Pick nth instance" sid="153789127786845" type="System">
+                                    <param id="0" name="Object">Cell</param>
+                                    <param id="1" name="Instance">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="782125869368007" type="System">
+                                    <param id="0" name="Variable">valnew</param>
+                                    <param id="1" name="Value">Cell.Val</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="613486678649139" type="Cell" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="711708858253062">
+                            <conditions>
+                                <condition id="-13" name="Pick nth instance" sid="227308832001221" type="System">
+                                    <param id="0" name="Object">Cell</param>
+                                    <param id="1" name="Instance">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Add to" sid="415953214964459" type="Cell">
+                                    <param id="0" name="Instance variable">Val</param>
+                                    <param id="1" name="Value">valnew</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="411977519308201">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="179460909733324" type="System">
+                            <param id="0" name="Object">Cell</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="737277079956430" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="414637498195491" type="System">
+                            <param id="0" name="Variable">MaxVal</param>
+                            <param id="1" name="Value">max(abs(Cell.Val), MaxVal)</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="960060851376506" type="System">
+                            <param id="0" name="Variable">CellCounter2</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="263098346319483">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="859402119291344" type="System">
+                                    <param id="0" name="Variable">CellCounter</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Cell.Count</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="683736670577475" type="System">
+                                    <param id="0" name="Variable">GradientCounter</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="208489260598694">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="305444848286269" type="System">
+                            <param id="0" name="Object">Cell</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="195527720420980" type="System">
+                            <param id="0" name="Variable">CellCounter2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Cell.Count</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="600589664128469" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="430194124101962" type="Cell">
+                            <param id="0" name="Instance variable">Val</param>
+                            <param id="1" name="Value">(Self.Val/MaxVal * 100)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="449370751552076">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="550391857224126" type="Cell">
+                                    <param id="0" name="Instance variable">Val</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="313401942592866" type="Cell">
+                                    <param id="0" name="Opacity">self.Val</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="600892082551872">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="549706957409741" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="805071223068511" type="Cell">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="541104016477348" type="Cell">
+                                    <param id="0" name="Opacity">abs(self.Val)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
 </c2eventsheet>
